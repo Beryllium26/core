@@ -24,3 +24,12 @@ variable "environment" {
   default = "base"
 }
 
+variable "profile" {
+  type = "string"
+  default = "core-infra"
+}
+ 
+variable "s3bucket" {
+  type = "string"
+  default = "orgfxe-core-infra-tfstate"
+}

@@ -1,9 +1,9 @@
  
 terraform {
     backend "s3" {
-        bucket          = "lsmfxe-core-infra-tfstate"
-        key             = "${environment}/terraform.tfstate"
+        bucket          = "${var.s3bucket}"
+        key             = "${var.environment}/terraform.tfstate"
         region          = "${var.region}"
-        profile         = "core-infra"        
+        profile         = "${var.profile}"
     }
 }
