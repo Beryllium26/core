@@ -31,5 +31,5 @@ variable "profile" {
  
 variable "s3bucket" {
   type = "string"
-  default = "orgfxe-core-infra-tfstate"
+  default = "orgfxe-1a-core-infra-tfstate"
 }
