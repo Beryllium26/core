@@ -12,6 +12,9 @@ jobs:
           name: Print the Current Time
           command: date
       - run:
+          name: install wget
+          command: apt-get install wget
+      - run:
           name: Download terraform
           command: wget https://dl.bintray.com/mitchellh/terraform/terraform_0.11.5_linux_amd64.zip
       - run:
