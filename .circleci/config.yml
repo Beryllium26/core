@@ -19,7 +19,7 @@ jobs:
           command: cd base && ls -al
       - run:
           name: initialize working directory
-          command: cd base && terraform init -input=false
+          command: cd base && ../terraform init -input=false
       - run:
           name: terraform retrieve state from S3
           command: cd base && ../terraform remote config -backend=S3 -backend-config="bucket=$BUCKET" -backend-config="key=base/terraform.tfstate" -backend-config="region=eu-west-2"
