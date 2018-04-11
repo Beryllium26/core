@@ -18,8 +18,13 @@ jobs:
           name: cd base && ls -al
           command: cd base && ls -al
       - run:
-          name: list files
-          command: ls -a
-
+          name: terraform retrieve state from S3
+          command: cd base && ../terraform remote config -backend=S3 -backend-config="bucket=$BUCKET" -backend-config="key=terraform.tfstate" -backend-config="region=eu-west-2"
+      - run:
+          name: terraform plan
+          command: cd base && ../terraform plan -out=terraform.plan -input=false
+      - run:
+          name: view plan
+          command: cd base && cat terraform.plan
 
 
