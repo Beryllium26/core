@@ -27,7 +27,7 @@ jobs:
           name: terraform plan
           command: cd base && ../terraform plan -out=terraform.plan -input=false
       - run:
-          name: view plan
-          command: cd base && cat terraform.plan
+          name: apply plan
+          command: cd base && ../terraform apply -input=false
 
 
