@@ -1,3 +1,4 @@
+/* define provider and resources */
 
 provider "aws" {
 	version = "~> 1.13"
