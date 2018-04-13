@@ -20,7 +20,8 @@ jobs:
       - run:
           name: initialize working directory
           command: cd base && ../terraform init -input=false
-      - run: terraform refresh
+      - run: 
+          name: terraform refresh
           command: cd base && ../terraform refresh
       - run:
           name: terraform plan
