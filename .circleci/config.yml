@@ -26,8 +26,8 @@ jobs:
       - run:
           name: terraform plan
           command: cd base && ../terraform plan -out=terraform.plan -input=false
-#      - run:
-#          name: apply plan
-#          command: cd base && ../terraform apply -input=false -auto-approve terraform.plan
-#
+      - run:
+          name: apply plan
+          command: cd base && ../terraform apply -input=false -auto-approve terraform.plan
+
 
