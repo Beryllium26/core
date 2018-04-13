@@ -20,13 +20,12 @@ jobs:
       - run:
           name: initialize working directory
           command: cd base && ../terraform init -input=false
-#      - run:
-#          name: terraform retrieve state from S3
-#          command: cd base && ../terraform remote config -backend=S3 -backend-config="bucket=$BUCKET" -backend-config="key=base/terraform.tfstate" -backend-config="region=eu-west-2"
+      - run: terraform refresh
+          command: cd base && ../terraform refresh
       - run:
           name: terraform plan
           command: cd base && ../terraform plan -out=terraform.plan -input=false
-      - run:
-          name: apply plan
-          command: cd base && ../terraform apply -input=false -auto-approve terraform.plan
+#      - run:
+#          name: apply plan
+#          command: cd base && ../terraform apply -input=false -auto-approve terraform.plan
 
