@@ -29,7 +29,8 @@ jobs:
       - persist_to_workspace:
           root: base
           paths:
-            - echo-output
+            - terraform
+            - terraform.plan
 
   deploy:
     docker:
