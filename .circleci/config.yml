@@ -24,8 +24,8 @@ jobs:
           name: terraform plan
           command: cd base && ./terraform plan -out=terraform.plan -input=false
       - run: 
-        name: cat base/terraform.plan
-        command: cat base/terraform.plan
+          name: cat base/terraform.plan
+          command: cat base/terraform.plan
       - persist_to_workspace:
           root: base
           paths:
@@ -40,8 +40,8 @@ jobs:
       - attach_workspace:
           at: base
       - run: 
-        name: ls -al base/terraform.plan
-        command: ls -al base/terraform.plan
+          name: ls -al base/terraform.plan
+          command: ls -al base/terraform.plan
           #      - run:
           #name: apply plan
           #command: cd base && ../terraform apply -input=false -auto-approve terraform.plan
@@ -52,8 +52,8 @@ workflows:
     jobs:
       - build
       - hold:
-        type: approval
-        requires:
+          type: approval
+          requires:
           - build
       - deploy:
           requires:
