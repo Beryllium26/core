@@ -6,7 +6,7 @@ variable "region" {
 variable "default_tags" {
   type = "map"
   default = {
-        Env = "BASE"
+        Env = "IAM"
         Contact = "Laurent/fxe"
         Function = "Core Infra"
   }
@@ -21,7 +21,7 @@ variable "uptime_tag" {
 
 variable "environment" {
   type = "string"
-  default = "base"
+  default = "iam"
 }
 
 variable "profile" {
